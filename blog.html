@@ -2,20 +2,19 @@
 <html lang="en">
   <head>
     <title>
-      Blog - Local Growth ATX | Austin SEO &amp; Local Marketing for Service
-      Businesses
+      Local Growth ATX Blog & Resources | Austin SEO & Digital Marketing Insights
     </title>
     <meta
       name="description"
-      content="Helping Austin service businesses get found, booked, and growing online. Local SEO, Google Business optimization, and lead generation—no agency fluff."
+      content="The latest on local SEO, digital marketing, Austin business trends, and real-world website growth. Expert insights from Local Growth ATX."
     />
     <meta
       property="og:title"
-      content="Blog - Local Growth ATX | Austin SEO &amp; Local Marketing for Service Businesses"
+      content="Local Growth ATX Blog & Resources | Austin SEO & Digital Marketing Insights"
     />
     <meta
       property="og:description"
-      content="Helping Austin service businesses get found, booked, and growing online. Simple, effective Local SEO and lead generation—no fluff, no pressure, just results."
+      content="The latest on local SEO, digital marketing, Austin business trends, and real-world website growth."
     />
     <meta
       property="og:image"
@@ -248,1415 +247,359 @@
                       const scrollThreshold = 50
 
                       function handleScroll() {
-                        const currentScroll =
-                          window.pageYOffset || document.documentElement.scrollTop
+                        const currentScroll = window.pageYOffset
 
                         if (currentScroll > scrollThreshold) {
-                          navigation.classList.add("navigation-scrolled")
+                          navigation.classList.add("navigation-elevated")
                         } else {
-                          navigation.classList.remove("navigation-scrolled")
+                          navigation.classList.remove("navigation-elevated")
                         }
 
                         lastScroll = currentScroll
                       }
 
-                      // Throttle scroll events for performance
-                      let scrollTimeout
-                      window.addEventListener(
-                        "scroll",
-                        function () {
-                          if (!scrollTimeout) {
-                            scrollTimeout = setTimeout(function () {
-                              handleScroll()
-                              scrollTimeout = null
-                            }, 10)
-                          }
-                        },
-                        { passive: true }
-                      )
+                      window.addEventListener("scroll", handleScroll, { passive: true })
 
-                      // Mobile menu toggle functionality
-                      function toggleMobileMenu() {
-                        const isActive = navigationLinks.classList.contains(
-                          "navigation-links-active"
-                        )
-
-                        if (isActive) {
-                          closeMobileMenu()
-                        } else {
-                          openMobileMenu()
-                        }
-                      }
-
-                      function openMobileMenu() {
-                        navigationLinks.classList.add("navigation-links-active")
-                        navigationOverlay.classList.add("navigation-mobile-overlay-active")
-                        navigationToggle.classList.add("navigation-toggle-active")
-                        navigationToggle.setAttribute("aria-expanded", "true")
-                        document.body.style.overflow = "hidden"
-                      }
-
-                      function closeMobileMenu() {
-                        navigationLinks.classList.remove("navigation-links-active")
-                        navigationOverlay.classList.remove("navigation-mobile-overlay-active")
-                        navigationToggle.classList.remove("navigation-toggle-active")
-                        navigationToggle.setAttribute("aria-expanded", "false")
-                        document.body.style.overflow = ""
-                      }
-
-                      // Toggle button click event
-                      navigationToggle.addEventListener("click", toggleMobileMenu)
-
-                      // Close menu when overlay is clicked
-                      navigationOverlay.addEventListener("click", closeMobileMenu)
-
-                      // Close menu when navigation link is clicked (mobile)
-                      const allNavigationLinks = navigationLinks.querySelectorAll(
-                        ".navigation-link, .navigation-cta"
-                      )
-                      allNavigationLinks.forEach((link) => {
-                        link.addEventListener("click", function () {
-                          if (window.innerWidth <= 991) {
-                            closeMobileMenu()
+                      // Mobile menu toggle
+                      if (navigationToggle && navigationLinks) {
+                        navigationToggle.addEventListener("click", function() {
+                          const isOpen = navigationLinks.classList.contains("navigation-links-active")
+                          
+                          if (isOpen) {
+                            navigationLinks.classList.remove("navigation-links-active")
+                            navigationToggle.setAttribute("aria-expanded", "false")
+                            document.body.style.overflow = ""
+                            if (navigationOverlay) {
+                              navigationOverlay.classList.remove("navigation-overlay-active")
+                            }
+                          } else {
+                            navigationLinks.classList.add("navigation-links-active")
+                            navigationToggle.setAttribute("aria-expanded", "true")
+                            document.body.style.overflow = "hidden"
+                            if (navigationOverlay) {
+                              navigationOverlay.classList.add("navigation-overlay-active")
+                            }
                           }
                         })
-                      })
 
-                      // Close menu on window resize if open
-                      let resizeTimeout
-                      window.addEventListener("resize", function () {
-                        clearTimeout(resizeTimeout)
-                        resizeTimeout = setTimeout(function () {
-                          if (
-                            window.innerWidth > 991 &&
-                            navigationLinks.classList.contains("navigation-links-active")
-                          ) {
-                            closeMobileMenu()
-                          }
-                        }, 250)
-                      })
-
-                      // Keyboard accessibility - Close menu on Escape key
-                      document.addEventListener("keydown", function (event) {
-                        if (
-                          event.key === "Escape" &&
-                          navigationLinks.classList.contains("navigation-links-active")
-                        ) {
-                          closeMobileMenu()
-                          navigationToggle.focus()
+                        // Close menu when overlay is clicked
+                        if (navigationOverlay) {
+                          navigationOverlay.addEventListener("click", function() {
+                            navigationLinks.classList.remove("navigation-links-active")
+                            navigationToggle.setAttribute("aria-expanded", "false")
+                            document.body.style.overflow = ""
+                            navigationOverlay.classList.remove("navigation-overlay-active")
+                          })
                         }
-                      })
-
-                      // Initial scroll check
-                      handleScroll()
+                      }
                     })()
-                  });
+                  })
                 </script>
               </div>
             </div>
           </div>
         </navigation-wrapper>
-        <article id="blog-page-container">
-          <section id="blog-hero-section" class="blog-hero">
-            <div class="hero-background-layer">
-              <img
-                alt="A vibrant daytime cityscape of downtown Austin, showcasing modern architecture and towering skyscrapers."
-                src="https://images.pexels.com/photos/273204/pexels-photo-273204.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                class="hero-bg-image"
-              />
-              <div class="hero-overlay"></div>
-            </div>
-            <div class="hero-content-wrapper">
-              <div class="hero-content-inner">
-                <div class="hero-text-block">
-                  <h1 class="hero-title">
-                    Austin Marketing Insights &amp; Local SEO Strategies
-                  </h1>
-                  <p class="hero-subtitle">
-                    Your go-to resource for actionable digital marketing tips,
-                    local SEO strategies, and growth tactics designed
-                    specifically for Austin service businesses.
-                  </p>
-                </div>
-                <div class="hero-search-container">
-                  <div class="search-box-wrapper">
-                    <div class="search-icon-wrapper">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="m21 21l-4.34-4.34"></path>
-                          <circle r="8" cx="11" cy="11"></circle>
-                        </g>
-                      </svg>
+
+        <!-- Blog Hero Section -->
+        <section id="blog-hero" class="hero">
+          <div class="hero__content">
+            <h1 class="hero-title">
+              Local Growth ATX Blog & Resources
+            </h1>
+            <p class="hero__subhead">
+              The latest on local SEO, digital marketing, Austin business trends, and real-world website growth.
+            </p>
+          </div>
+        </section>
+
+        <!-- Blog Content Section with Sidebar -->
+        <section id="blog-content" class="blog-content-section">
+          <div class="blog-content-container">
+            <!-- Main Content Area -->
+            <div class="blog-main-content">
+              <!-- Featured Posts Grid -->
+              <div class="blog-posts-grid">
+                <!-- Blog Post Card 1 -->
+                <article class="blog-card">
+                  <div class="blog-card-image-wrapper">
+                    <img
+                      src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=800"
+                      alt="Austin skyline at sunset"
+                      class="blog-card-image"
+                    />
+                    <div class="blog-card-category">Local SEO</div>
+                  </div>
+                  <div class="blog-card-content">
+                    <h3 class="blog-card-title">
+                      How Austin Service Businesses Can Dominate Local Search in 2025
+                    </h3>
+                    <p class="blog-card-excerpt">
+                      Discover the proven strategies that help Austin HVAC, plumbing, and medspa businesses rank #1 in local search results and generate consistent leads.
+                    </p>
+                    <div class="blog-card-meta">
+                      <span class="blog-card-date">November 5, 2025</span>
+                      <span class="blog-card-read-time">8 min read</span>
                     </div>
-                    <input
-                      type="search"
-                      id="blog-search-input"
-                      placeholder="Search articles, guides, and tips..."
-                      class="search-input-field"
+                    <button class="btn-secondary btn blog-card-cta">Read Article</button>
+                  </div>
+                </article>
+
+                <!-- Blog Post Card 2 -->
+                <article class="blog-card">
+                  <div class="blog-card-image-wrapper">
+                    <img
+                      src="https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg?auto=compress&cs=tinysrgb&w=800"
+                      alt="Business meeting with digital marketing charts"
+                      class="blog-card-image"
+                    />
+                    <div class="blog-card-category">Google Business</div>
+                  </div>
+                  <div class="blog-card-content">
+                    <h3 class="blog-card-title">
+                      Google Business Profile Optimization: The Complete 2025 Guide
+                    </h3>
+                    <p class="blog-card-excerpt">
+                      Learn how to optimize your Google Business Profile to attract more customers, improve your local rankings, and stand out from competitors.
+                    </p>
+                    <div class="blog-card-meta">
+                      <span class="blog-card-date">November 1, 2025</span>
+                      <span class="blog-card-read-time">12 min read</span>
+                    </div>
+                    <button class="btn-secondary btn blog-card-cta">Read Article</button>
+                  </div>
+                </article>
+
+                <!-- Blog Post Card 3 -->
+                <article class="blog-card">
+                  <div class="blog-card-image-wrapper">
+                    <img
+                      src="https://images.pexels.com/photos/273204/pexels-photo-273204.jpeg?auto=compress&cs=tinysrgb&w=800"
+                      alt="Downtown Austin architecture"
+                      class="blog-card-image"
+                    />
+                    <div class="blog-card-category">Austin Marketing</div>
+                  </div>
+                  <div class="blog-card-content">
+                    <h3 class="blog-card-title">
+                      Why Austin's Service Industry Needs Hyperlocal Marketing
+                    </h3>
+                    <p class="blog-card-excerpt">
+                      Austin's booming growth means more competition. Here's how hyperlocal marketing helps service businesses capture neighborhood-level demand.
+                    </p>
+                    <div class="blog-card-meta">
+                      <span class="blog-card-date">October 28, 2025</span>
+                      <span class="blog-card-read-time">6 min read</span>
+                    </div>
+                    <button class="btn-secondary btn blog-card-cta">Read Article</button>
+                  </div>
+                </article>
+
+                <!-- Blog Post Card 4 -->
+                <article class="blog-card">
+                  <div class="blog-card-image-wrapper">
+                    <img
+                      src="https://images.pexels.com/photos/8572163/pexels-photo-8572163.jpeg?auto=compress&cs=tinysrgb&w=800"
+                      alt="Professional working on laptop with analytics"
+                      class="blog-card-image"
+                    />
+                    <div class="blog-card-category">Lead Generation</div>
+                  </div>
+                  <div class="blog-card-content">
+                    <h3 class="blog-card-title">
+                      5 Lead Generation Tactics That Work for Austin Service Businesses
+                    </h3>
+                    <p class="blog-card-excerpt">
+                      Stop wasting money on leads that don't convert. These five tactics help Austin businesses generate high-quality leads that turn into paying customers.
+                    </p>
+                    <div class="blog-card-meta">
+                      <span class="blog-card-date">October 25, 2025</span>
+                      <span class="blog-card-read-time">10 min read</span>
+                    </div>
+                    <button class="btn-secondary btn blog-card-cta">Read Article</button>
+                  </div>
+                </article>
+
+                <!-- Blog Post Card 5 -->
+                <article class="blog-card">
+                  <div class="blog-card-image-wrapper">
+                    <img
+                      src="https://images.pexels.com/photos/14253520/pexels-photo-14253520.jpeg?auto=compress&cs=tinysrgb&w=800"
+                      alt="Modern office building in Austin"
+                      class="blog-card-image"
+                    />
+                    <div class="blog-card-category">Digital Marketing</div>
+                  </div>
+                  <div class="blog-card-content">
+                    <h3 class="blog-card-title">
+                      Content Marketing for Service Businesses: What Actually Works
+                    </h3>
+                    <p class="blog-card-excerpt">
+                      Not all content is created equal. Learn which content marketing strategies drive real results for Austin service businesses.
+                    </p>
+                    <div class="blog-card-meta">
+                      <span class="blog-card-date">October 20, 2025</span>
+                      <span class="blog-card-read-time">9 min read</span>
+                    </div>
+                    <button class="btn-secondary btn blog-card-cta">Read Article</button>
+                  </div>
+                </article>
+
+                <!-- Blog Post Card 6 -->
+                <article class="blog-card">
+                  <div class="blog-card-image-wrapper">
+                    <img
+                      src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800"
+                      alt="Team collaborating on marketing strategy"
+                      class="blog-card-image"
+                    />
+                    <div class="blog-card-category">Case Studies</div>
+                  </div>
+                  <div class="blog-card-content">
+                    <h3 class="blog-card-title">
+                      Case Study: How We Tripled Leads for an Austin HVAC Company
+                    </h3>
+                    <p class="blog-card-excerpt">
+                      See the exact strategies we used to help a local HVAC company go from 20 leads per month to 60+ qualified leads in just 90 days.
+                    </p>
+                    <div class="blog-card-meta">
+                      <span class="blog-card-date">October 15, 2025</span>
+                      <span class="blog-card-read-time">11 min read</span>
+                    </div>
+                    <button class="btn-secondary btn blog-card-cta">Read Article</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="blog-sidebar">
+              <!-- Categories Section -->
+              <div class="sidebar-section">
+                <h3 class="sidebar-title">Categories</h3>
+                <ul class="sidebar-list">
+                  <li class="sidebar-list-item">
+                    <a href="#local-seo" class="sidebar-link">
+                      <span>Local SEO</span>
+                      <span class="sidebar-count">12</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#google-business" class="sidebar-link">
+                      <span>Google Business</span>
+                      <span class="sidebar-count">8</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#lead-generation" class="sidebar-link">
+                      <span>Lead Generation</span>
+                      <span class="sidebar-count">10</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#austin-marketing" class="sidebar-link">
+                      <span>Austin Marketing</span>
+                      <span class="sidebar-count">6</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#digital-marketing" class="sidebar-link">
+                      <span>Digital Marketing</span>
+                      <span class="sidebar-count">15</span>
+                    </a>
+                  </li>
+                  <li class="sidebar-list-item">
+                    <a href="#case-studies" class="sidebar-link">
+                      <span>Case Studies</span>
+                      <span class="sidebar-count">5</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Tags Section -->
+              <div class="sidebar-section">
+                <h3 class="sidebar-title">Popular Tags</h3>
+                <div class="sidebar-tags">
+                  <a href="#seo" class="sidebar-tag">SEO</a>
+                  <a href="#austin" class="sidebar-tag">Austin</a>
+                  <a href="#google" class="sidebar-tag">Google</a>
+                  <a href="#leads" class="sidebar-tag">Leads</a>
+                  <a href="#local" class="sidebar-tag">Local</a>
+                  <a href="#marketing" class="sidebar-tag">Marketing</a>
+                  <a href="#growth" class="sidebar-tag">Growth</a>
+                  <a href="#strategy" class="sidebar-tag">Strategy</a>
+                </div>
+              </div>
+
+              <!-- From the Founder Section -->
+              <div class="sidebar-section sidebar-founder">
+                <h3 class="sidebar-title">From the Founder</h3>
+                <div class="founder-content">
+                  <div class="founder-image-wrapper">
+                    <img
+                      src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400"
+                      alt="Founder of Local Growth ATX"
+                      class="founder-image"
                     />
                   </div>
+                  <p class="founder-text">
+                    "I started Local Growth ATX because I saw too many Austin service businesses struggling with overpriced agencies that promised the world but delivered nothing. We're here to change that with honest, results-driven local SEO."
+                  </p>
+                  <p class="founder-signature">
+                    — Michael Chen, Founder
+                  </p>
                 </div>
               </div>
-            </div>
-          </section>
-          <section id="blog-filter-section" class="filter-section">
-            <div class="filter-container">
-              <div class="filter-header">
-                <div class="filter-title-group">
-                  <div class="filter-icon">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M2 5h20M6 12h12m-9 7h6"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </div>
-                  <h2 class="section-subtitle">Browse by Topic</h2>
-                </div>
+
+              <!-- Newsletter Subscription in Sidebar -->
+              <div class="sidebar-section sidebar-newsletter">
+                <h3 class="sidebar-title">Get Weekly Insights</h3>
+                <p class="sidebar-newsletter-text">
+                  Join 500+ Austin business owners getting actionable local SEO tips every week.
+                </p>
+                <form class="sidebar-newsletter-form">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    required
+                    class="sidebar-newsletter-input"
+                  />
+                  <button type="submit" class="btn-primary btn sidebar-newsletter-btn">
+                    Subscribe
+                  </button>
+                </form>
               </div>
-              <div class="category-pills-container">
-                <button data-category="all" class="category-pill active">
-                  All Articles
-                </button>
-                <button data-category="local-seo" class="category-pill">
-                  Local SEO
-                </button>
-                <button data-category="google-business" class="category-pill">
-                  Google Business
-                </button>
-                <button data-category="lead-generation" class="category-pill">
-                  Lead Generation
-                </button>
-                <button data-category="content-marketing" class="category-pill">
-                  Content Marketing
-                </button>
-                <button data-category="austin-marketing" class="category-pill">
-                  Austin Marketing
-                </button>
-                <button data-category="case-studies" class="category-pill">
-                  Case Studies
-                </button>
-                <button data-category="tips-tricks" class="category-pill">
-                  Tips &amp; Tricks
-                </button>
-              </div>
-            </div>
-          </section>
-          <section id="featured-article-section" class="featured-section">
-            <div class="featured-container">
-              <div class="featured-badge">
-                <svg
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="24"
-                  viewBox="0 0 24 24"
-                >
-                  <g
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M16 7h6v6"></path>
-                    <path d="m22 7l-8.5 8.5l-5-5L2 17"></path>
-                  </g>
-                </svg>
-                <span>Featured Article</span>
-              </div>
-              <div class="featured-content-grid">
-                <div class="featured-image-wrapper">
-                  <img
-                    alt="Business professionals discussing data charts and graphs in a modern office setting."
-                    src="https://images.pexels.com/photos/5716001/pexels-photo-5716001.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="featured-image"
-                  />
-                  <div class="featured-category-tag">
-                    <span>Local SEO</span>
-                  </div>
-                </div>
-                <div class="featured-text-content">
-                  <h2 class="featured-article-title">
-                    The Complete Guide to Ranking Your Austin Service Business
-                    in 2025
-                  </h2>
-                  <p class="featured-article-excerpt">
-                    Learn the exact strategies local Austin businesses are using
-                    to dominate Google search results, generate quality leads,
-                    and become the go-to choice in their market. This
-                    comprehensive guide covers everything from Google Business
-                    Profile optimization to local citation building.
-                  </p>
-                  <div class="featured-meta-container">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>May 15, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>12 min read</span>
-                    </div>
-                  </div>
-                  <button class="featured-cta btn-primary btn">
-                    Read Full Guide
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section id="blog-grid-section" class="blog-grid-section">
-            <div class="blog-grid-container">
-              <article data-category="google-business" class="blog-card">
-                <div class="card-image-wrapper">
-                  <img
-                    alt="Team members analyze charts during a business meeting with laptops and smartphones."
-                    src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="card-image"
-                  />
-                  <div class="card-category-badge">
-                    <span>Google Business</span>
-                  </div>
-                  <button aria-label="Bookmark article" class="bookmark-btn">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m19 21l-7-4l-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <h3 class="untitled-card-title">
-                    7 Google Business Profile Optimization Tricks That Actually
-                    Work
-                  </h3>
-                  <p class="card-excerpt">
-                    Stop leaving easy rankings on the table. These seven
-                    optimization tactics can boost your local visibility in
-                    days, not months.
-                  </p>
-                  <div class="untitled-card-meta">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>May 12, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>8 min</span>
-                    </div>
-                  </div>
-                  <button class="btn-outline card-cta btn">Read Article</button>
-                </div>
-              </article>
-              <article data-category="local-seo" class="blog-card">
-                <div class="card-image-wrapper">
-                  <img
-                    alt="Low-angle view of high-rise buildings against a bright blue sky in Austin, Texas."
-                    src="https://images.pexels.com/photos/14253520/pexels-photo-14253520.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="card-image"
-                  />
-                  <div class="card-category-badge"><span>Local SEO</span></div>
-                  <button aria-label="Bookmark article" class="bookmark-btn">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m19 21l-7-4l-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <h3 class="untitled-card-title">
-                    Why Your Austin Business Isn't Showing Up in Local Search
-                    Results
-                  </h3>
-                  <p class="card-excerpt">
-                    Discover the most common local SEO mistakes Austin
-                    businesses make and how to fix them before your competitors
-                    do.
-                  </p>
-                  <div class="untitled-card-meta">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>May 10, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>6 min</span>
-                    </div>
-                  </div>
-                  <button class="btn-outline card-cta btn">Read Article</button>
-                </div>
-              </article>
-              <article data-category="lead-generation" class="blog-card">
-                <div class="card-image-wrapper">
-                  <img
-                    alt="Team analyzing financial charts and digital reports during a business meeting."
-                    src="https://images.pexels.com/photos/5716032/pexels-photo-5716032.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="card-image"
-                  />
-                  <div class="card-category-badge">
-                    <span>Lead Generation</span>
-                  </div>
-                  <button aria-label="Bookmark article" class="bookmark-btn">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m19 21l-7-4l-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <h3 class="untitled-card-title">
-                    From Zero to 50+ Monthly Leads: A Real Austin HVAC Success
-                    Story
-                  </h3>
-                  <p class="card-excerpt">
-                    See exactly how we helped a local HVAC company go from
-                    invisible online to generating consistent, quality leads
-                    every month.
-                  </p>
-                  <div class="untitled-card-meta">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>May 8, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>10 min</span>
-                    </div>
-                  </div>
-                  <button class="btn-outline card-cta btn">Read Article</button>
-                </div>
-              </article>
-              <article data-category="austin-marketing" class="blog-card">
-                <div class="card-image-wrapper">
-                  <img
-                    alt="Panoramic view of Austin's skyline, featuring modern skyscrapers, a bridge, and a serene river."
-                    src="https://images.pexels.com/photos/18583619/pexels-photo-18583619.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="card-image"
-                  />
-                  <div class="card-category-badge">
-                    <span>Austin Marketing</span>
-                  </div>
-                  <button aria-label="Bookmark article" class="bookmark-btn">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m19 21l-7-4l-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <h3 class="untitled-card-title">
-                    The Austin Business Owner's Guide to Digital Marketing in
-                    2025
-                  </h3>
-                  <p class="card-excerpt">
-                    What every local business owner in Austin needs to know
-                    about digital marketing, without the confusion or fluff.
-                  </p>
-                  <div class="untitled-card-meta">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>May 5, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>9 min</span>
-                    </div>
-                  </div>
-                  <button class="btn-outline card-cta btn">Read Article</button>
-                </div>
-              </article>
-              <article data-category="content-marketing" class="blog-card">
-                <div class="card-image-wrapper">
-                  <img
-                    alt="Top view of a laptop, charts, and resume on a wooden desk, showcasing business analysis and job application."
-                    src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="card-image"
-                  />
-                  <div class="card-category-badge">
-                    <span>Content Marketing</span>
-                  </div>
-                  <button aria-label="Bookmark article" class="bookmark-btn">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m19 21l-7-4l-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <h3 class="untitled-card-title">
-                    How to Create Blog Content That Actually Ranks on Google
-                  </h3>
-                  <p class="card-excerpt">
-                    A straightforward, no-BS approach to creating blog content
-                    that helps your business show up when customers are
-                    searching.
-                  </p>
-                  <div class="untitled-card-meta">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>May 3, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>7 min</span>
-                    </div>
-                  </div>
-                  <button class="btn-outline card-cta btn">Read Article</button>
-                </div>
-              </article>
-              <article data-category="tips-tricks" class="blog-card">
-                <div class="card-image-wrapper">
-                  <img
-                    alt="A diverse group of professionals engage in a collaborative team meeting in a stylish office environment."
-                    src="https://images.pexels.com/photos/7688173/pexels-photo-7688173.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="card-image"
-                  />
-                  <div class="card-category-badge">
-                    <span>Tips &amp; Tricks</span>
-                  </div>
-                  <button aria-label="Bookmark article" class="bookmark-btn">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m19 21l-7-4l-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <h3 class="untitled-card-title">
-                    5 Quick Wins to Improve Your Local SEO This Week
-                  </h3>
-                  <p class="card-excerpt">
-                    Don't have time for a full SEO overhaul? Start with these
-                    five simple tactics you can implement today for immediate
-                    results.
-                  </p>
-                  <div class="untitled-card-meta">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>May 1, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>5 min</span>
-                    </div>
-                  </div>
-                  <button class="btn-outline card-cta btn">Read Article</button>
-                </div>
-              </article>
-              <article data-category="case-studies" class="blog-card">
-                <div class="card-image-wrapper">
-                  <img
-                    alt="A multicultural office team high-fiving and celebrating a successful collaboration."
-                    src="https://images.pexels.com/photos/7688174/pexels-photo-7688174.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="card-image"
-                  />
-                  <div class="card-category-badge">
-                    <span>Case Studies</span>
-                  </div>
-                  <button aria-label="Bookmark article" class="bookmark-btn">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m19 21l-7-4l-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <h3 class="untitled-card-title">
-                    How We Helped an Austin Landscaper Triple Their Online
-                    Bookings
-                  </h3>
-                  <p class="card-excerpt">
-                    A behind-the-scenes look at the exact strategy we used to
-                    transform a struggling landscaping business into a
-                    fully-booked operation.
-                  </p>
-                  <div class="untitled-card-meta">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>Apr 28, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>11 min</span>
-                    </div>
-                  </div>
-                  <button class="btn-outline card-cta btn">Read Article</button>
-                </div>
-              </article>
-              <article data-category="google-business" class="blog-card">
-                <div class="card-image-wrapper">
-                  <img
-                    alt="Focused woman wearing headphones, working on a laptop in a cozy home office setup with natural light."
-                    src="https://images.pexels.com/photos/5921786/pexels-photo-5921786.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="card-image"
-                  />
-                  <div class="card-category-badge">
-                    <span>Google Business</span>
-                  </div>
-                  <button aria-label="Bookmark article" class="bookmark-btn">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m19 21l-7-4l-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <h3 class="untitled-card-title">
-                    Google Reviews: The Complete Guide to Getting More 5-Star
-                    Reviews
-                  </h3>
-                  <p class="card-excerpt">
-                    Learn proven strategies to encourage happy customers to
-                    leave reviews and build your online reputation the right
-                    way.
-                  </p>
-                  <div class="untitled-card-meta">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>Apr 26, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>8 min</span>
-                    </div>
-                  </div>
-                  <button class="btn-outline card-cta btn">Read Article</button>
-                </div>
-              </article>
-              <article data-category="local-seo" class="blog-card">
-                <div class="card-image-wrapper">
-                  <img
-                    alt="A flat lay composition featuring office essentials and a branding strategy clipboard on a modern workspace."
-                    src="https://images.pexels.com/photos/8970684/pexels-photo-8970684.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1500"
-                    class="card-image"
-                  />
-                  <div class="card-category-badge"><span>Local SEO</span></div>
-                  <button aria-label="Bookmark article" class="bookmark-btn">
-                    <svg
-                      width="24"
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="24"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="m19 21l-7-4l-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-                <div class="card-content">
-                  <h3 class="untitled-card-title">
-                    Local Citations 101: What They Are and Why Your Business
-                    Needs Them
-                  </h3>
-                  <p class="card-excerpt">
-                    Understanding the role of local citations in SEO and how to
-                    build them correctly for maximum search visibility.
-                  </p>
-                  <div class="untitled-card-meta">
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M8 2v4m8-4v4"></path>
-                          <rect
-                            x="3"
-                            y="4"
-                            rx="2"
-                            width="18"
-                            height="18"
-                          ></rect>
-                          <path d="M3 10h18"></path>
-                        </g>
-                      </svg>
-                      <span>Apr 23, 2025</span>
-                    </div>
-                    <div class="meta-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 6v6l4 2"></path>
-                          <circle r="10" cx="12" cy="12"></circle>
-                        </g>
-                      </svg>
-                      <span>6 min</span>
-                    </div>
-                  </div>
-                  <button class="btn-outline card-cta btn">Read Article</button>
-                </div>
-              </article>
-            </div>
-            <div class="load-more-container">
-              <button
-                id="load-more-button"
-                class="btn-secondary load-more-btn btn"
-              >
-                Load More Articles
-              </button>
-            </div>
-          </section>
-          <section id="newsletter-section" class="newsletter-section">
-            <div class="newsletter-container">
-              <div class="newsletter-content-grid">
-                <div class="newsletter-text">
-                  <h2 class="section-title">
-                    Get Austin Marketing Tips Delivered Weekly
-                  </h2>
-                  <p class="section-content">
-                    Join 500+ local business owners getting actionable marketing
-                    strategies, local SEO tips, and growth tactics delivered
-                    straight to their inbox every week. No fluff, no spam—just
-                    practical advice you can use.
-                  </p>
-                  <ul class="newsletter-benefits">
-                    <li class="benefit-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path
-                            d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"
-                          ></path>
-                          <circle
-                            r=".5"
-                            cx="7.5"
-                            cy="7.5"
-                            fill="currentColor"
-                          ></circle>
-                        </g>
-                      </svg>
-                      <span>Weekly actionable marketing tips</span>
-                    </li>
-                    <li class="benefit-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path
-                            d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"
-                          ></path>
-                          <circle
-                            r=".5"
-                            cx="7.5"
-                            cy="7.5"
-                            fill="currentColor"
-                          ></circle>
-                        </g>
-                      </svg>
-                      <span>Exclusive Austin market insights</span>
-                    </li>
-                    <li class="benefit-item">
-                      <svg
-                        width="24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="24"
-                        viewBox="0 0 24 24"
-                      >
-                        <g
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path
-                            d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"
-                          ></path>
-                          <circle
-                            r=".5"
-                            cx="7.5"
-                            cy="7.5"
-                            fill="currentColor"
-                          ></circle>
-                        </g>
-                      </svg>
-                      <span>Early access to new guides and resources</span>
-                    </li>
-                  </ul>
-                </div>
-                <div class="newsletter-form-wrapper">
-                  <form
-                    id="newsletter-form"
-                    data-form-id="4be90e38-bd7e-4a41-bb65-9d4bd92c3282"
-                    class="newsletter-form"
-                  >
-                    <div class="untitled-form-group">
-                      <label for="newsletter-name" class="untitled-form-label">
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        id="newsletter-name"
-                        name="true"
-                        required="true"
-                        placeholder="John Smith"
-                        data-form-field-id="newsletter-name"
-                        class="untitled-form-input"
-                      />
-                    </div>
-                    <div class="untitled-form-group">
-                      <label for="newsletter-email" class="untitled-form-label">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        id="newsletter-email"
-                        name="email"
-                        required="true"
-                        placeholder="john@business.com"
-                        data-form-field-id="newsletter-email"
-                        class="untitled-form-input"
-                      />
-                    </div>
-                    <button
-                      name="button gjh7sfy9ds"
-                      type="submit"
-                      class="btn-primary btn newsletter-submit"
-                    >
-                      Subscribe Now
-                    </button>
-                    <p class="newsletter-disclaimer">
-                      No spam. Unsubscribe anytime. We respect your privacy.
-                    </p>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </section>
-        </article>
-        <div class="blog-container3">
-          <div class="blog-container4">
-            <script defer="" data-name="blog-page-functionality">
-              document.addEventListener('DOMContentLoaded', function() {
-                (function(){
-                  // Category Filter Functionality
-                  const categoryPills = document.querySelectorAll(".category-pill")
-                  const blogCards = document.querySelectorAll(".blog-card")
-
-                  categoryPills.forEach((pill) => {
-                    pill.addEventListener("click", () => {
-                      const selectedCategory = pill.getAttribute("data-category")
-
-                      // Update active state
-                      categoryPills.forEach((p) => p.classList.remove("active"))
-                      pill.classList.add("active")
-
-                      // Filter cards
-                      blogCards.forEach((card) => {
-                        const cardCategory = card.getAttribute("data-category")
-
-                        if (selectedCategory === "all" || cardCategory === selectedCategory) {
-                          card.style.display = "flex"
-                          card.style.animation = "fadeInUp 0.4s ease forwards"
-                        } else {
-                          card.style.display = "none"
-                        }
-                      })
-                    })
-                  })
-
-                  // Search Functionality
-                  const searchInput = document.getElementById("blog-search-input")
-
-                  searchInput.addEventListener("input", (e) => {
-                    const searchTerm = e.target.value.toLowerCase()
-
-                    blogCards.forEach((card) => {
-                      const title = card.querySelector(".card-title").textContent.toLowerCase()
-                      const excerpt = card
-                        .querySelector(".card-excerpt")
-                        .textContent.toLowerCase()
-
-                      if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
-                        card.style.display = "flex"
-                      } else {
-                        card.style.display = "none"
-                      }
-                    })
-                  })
-
-                  // Bookmark Functionality
-                  const bookmarkButtons = document.querySelectorAll(".bookmark-btn")
-
-                  bookmarkButtons.forEach((btn) => {
-                    btn.addEventListener("click", (e) => {
-                      e.stopPropagation()
-                      btn.classList.toggle("bookmarked")
-
-                      if (btn.classList.contains("bookmarked")) {
-                        btn.querySelector("svg").style.fill = "currentColor"
-                      } else {
-                        btn.querySelector("svg").style.fill = "none"
-                      }
-                    })
-                  })
-
-                  // Newsletter Form Submission
-                  const newsletterForm = document.getElementById("newsletter-form")
-
-                  newsletterForm.addEventListener("submit", (e) => {
-                    e.preventDefault()
-
-                    const name = document.getElementById("newsletter-name").value
-                    const email = document.getElementById("newsletter-email").value
-
-                    // Here you would typically send this to your backend
-                    console.log("Newsletter signup:", { name, email })
-
-                    // Show success message
-                    alert("Thanks for subscribing! Check your email for confirmation.")
-
-                    // Reset form
-                    newsletterForm.reset()
-                  })
-
-                  // Load More Functionality
-                  const loadMoreBtn = document.getElementById("load-more-button")
-                  let currentlyVisible = 9
-
-                  loadMoreBtn.addEventListener("click", () => {
-                    // In a real implementation, this would load more articles from your backend
-                    loadMoreBtn.textContent = "Loading..."
-
-                    setTimeout(() => {
-                      loadMoreBtn.textContent = "Load More Articles"
-                      alert(
-                        "In a production environment, this would load more blog articles from your database."
-                      )
-                    }, 1000)
-                  })
-
-                  // Add fade-in animation keyframes dynamically
-                  const style = document.createElement("style")
-                  style.textContent = `
-                  @keyframes fadeInUp {
-                    from {
-                      opacity: 0;
-                      transform: translateY(20px);
-                    }
-                    to {
-                      opacity: 1;
-                      transform: translateY(0);
-                    }
-                  }
-                `
-                  document.head.appendChild(style)
-
-                  // Smooth scroll for article cards
-                  blogCards.forEach((card) => {
-                    card.style.cursor = "pointer"
-                    card.addEventListener("click", (e) => {
-                      if (!e.target.closest(".bookmark-btn") && !e.target.closest(".btn")) {
-                        // In production, this would navigate to the article page
-                        console.log("Navigate to article")
-                      }
-                    })
-                  })
-                })()
-              });
-            </script>
+            </aside>
           </div>
-        </div>
+        </section>
+
+        <!-- Newsletter CTA Section -->
+        <section id="newsletter-cta" class="newsletter-cta-section">
+          <div class="newsletter-cta-container">
+            <div class="newsletter-cta-content">
+              <h2 class="newsletter-cta-title">
+                Stay Ahead of the Competition
+              </h2>
+              <p class="newsletter-cta-description">
+                Get exclusive local SEO strategies, Austin marketing insights, and growth tactics delivered to your inbox every week. No spam, just actionable advice.
+              </p>
+            </div>
+            <form class="newsletter-cta-form">
+              <div class="newsletter-cta-input-group">
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  required
+                  class="newsletter-cta-input"
+                />
+                <button type="submit" class="btn-primary btn newsletter-cta-button">
+                  Subscribe Now
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
         <footer-wrapper class="footer-wrapper">
           <!--Footer component-->
           <div class="footer-container1">
@@ -1675,11 +618,10 @@
                     <div class="footer-social-group">
                       <a
                         href="https://facebook.com"
-                        target="_blank"
                         rel="noreferrer noopener"
+                        target="_blank"
                       >
                         <div
-                          rel="noopener noreferrer"
                           target="_blank"
                           aria-label="Follow us on Facebook"
                           class="footer-social-link"
@@ -1691,23 +633,18 @@
                             viewBox="0 0 24 24"
                           >
                             <path
-                              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                              fill="currentColor"
                             ></path>
                           </svg>
                         </div>
                       </a>
                       <a
                         href="https://twitter.com"
-                        target="_blank"
                         rel="noreferrer noopener"
+                        target="_blank"
                       >
                         <div
-                          rel="noopener noreferrer"
                           target="_blank"
                           aria-label="Follow us on Twitter"
                           class="footer-social-link"
@@ -1719,23 +656,18 @@
                             viewBox="0 0 24 24"
                           >
                             <path
-                              d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6c2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4c-.9-4.2 4-6.6 7-3.8c1.1 0 3-1.2 3-1.2"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                              fill="currentColor"
                             ></path>
                           </svg>
                         </div>
                       </a>
                       <a
                         href="https://linkedin.com"
-                        target="_blank"
                         rel="noreferrer noopener"
+                        target="_blank"
                       >
                         <div
-                          rel="noopener noreferrer"
                           target="_blank"
                           aria-label="Connect on LinkedIn"
                           class="footer-social-link"
@@ -1746,28 +678,19 @@
                             height="24"
                             viewBox="0 0 24 24"
                           >
-                            <g
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path
-                                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6M2 9h4v12H2z"
-                              ></path>
-                              <circle r="2" cx="4" cy="4"></circle>
-                            </g>
+                            <path
+                              d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"
+                              fill="currentColor"
+                            ></path>
                           </svg>
                         </div>
                       </a>
                       <a
                         href="https://instagram.com"
-                        target="_blank"
                         rel="noreferrer noopener"
+                        target="_blank"
                       >
                         <div
-                          rel="noopener noreferrer"
                           target="_blank"
                           aria-label="Follow us on Instagram"
                           class="footer-social-link"
@@ -1778,25 +701,10 @@
                             height="24"
                             viewBox="0 0 24 24"
                           >
-                            <g
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <rect
-                                x="2"
-                                y="2"
-                                rx="5"
-                                ry="5"
-                                width="20"
-                                height="20"
-                              ></rect>
-                              <path
-                                d="M16 11.37A4 4 0 1 1 12.63 8A4 4 0 0 1 16 11.37m1.5-4.87h.01"
-                              ></path>
-                            </g>
+                            <path
+                              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                              fill="currentColor"
+                            ></path>
                           </svg>
                         </div>
                       </a>
@@ -1807,28 +715,28 @@
                     <nav aria-label="Footer navigation" class="footer-nav">
                       <ul class="footer-nav-list">
                         <li class="footer-nav-item">
-                          <a href="index.html.html">
+                          <a href="index.html">
                             <div class="footer-nav-link">
                               <span>Homepage</span>
                             </div>
                           </a>
                         </li>
                         <li class="footer-nav-item">
-                          <a href="services.html.html">
+                          <a href="services.html">
                             <div class="footer-nav-link">
                               <span>Services</span>
                             </div>
                           </a>
                         </li>
                         <li class="footer-nav-item">
-                          <a href="about-us.html.html">
+                          <a href="about-us.html">
                             <div class="footer-nav-link">
                               <span>About Us</span>
                             </div>
                           </a>
                         </li>
                         <li class="footer-nav-item">
-                          <a href="index.html#contact.html">
+                          <a href="index.html#contact">
                             <div class="footer-nav-link">
                               <span>Contact</span>
                             </div>
@@ -1841,26 +749,26 @@
                     <h4 class="footer-column-title">Our Services</h4>
                     <ul class="footer-list">
                       <li class="footer-list-item">
-                        <a href="services.html#local-seo.html">
+                        <a href="services.html#local-seo">
                           <div class="footer-link"><span>Local SEO</span></div>
                         </a>
                       </li>
                       <li class="footer-list-item">
-                        <a href="services.html#google-business.html">
+                        <a href="services.html#google-business">
                           <div class="footer-link">
                             <span>Google Business Profile</span>
                           </div>
                         </a>
                       </li>
                       <li class="footer-list-item">
-                        <a href="services.html#lead-generation.html">
+                        <a href="services.html#lead-generation">
                           <div class="footer-link">
                             <span>Lead Generation</span>
                           </div>
                         </a>
                       </li>
                       <li class="footer-list-item">
-                        <a href="services.html#digital-marketing.html">
+                        <a href="services.html#digital-marketing">
                           <div class="footer-link">
                             <span>Digital Marketing</span>
                           </div>
@@ -1880,21 +788,14 @@
                             viewBox="0 0 24 24"
                           >
                             <path
-                              d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233a14 14 0 0 0 6.392 6.384"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
+                              d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z"
+                              fill="currentColor"
                             ></path>
                           </svg>
                         </div>
-                        <a href="tel:+15125551234">
-                          <div class="footer-contact-link"><span></span></div>
-                        </a>
-                        <a href="tel:+15129568214" class="footer-link23">
+                        <a href="tel:+15129568714" class="footer-link23">
                           <fragment class="blog-fragment2">
-                            <span class="blog-text45">(512) 956-8214</span>
+                            <span class="blog-text45">(512) 956-8714</span>
                           </fragment>
                         </a>
                       </li>
@@ -1906,33 +807,12 @@
                             height="24"
                             viewBox="0 0 24 24"
                           >
-                            <g
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path
-                                d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"
-                              ></path>
-                              <rect
-                                x="2"
-                                y="4"
-                                rx="2"
-                                width="20"
-                                height="16"
-                              ></rect>
-                            </g>
+                            <path
+                              d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"
+                              fill="currentColor"
+                            ></path>
                           </svg>
                         </div>
-                        <a
-                          href="mailto:hello@localvisibilityboost.com?subject="
-                        >
-                          <div
-                            class="footer-footer-contact-link2 footer-contact-link"
-                          ></div>
-                        </a>
                         <a
                           href="mailto:hello@localgrowthatx.com?subject=New Website Inquiry"
                           class="footer-link25"
@@ -1952,18 +832,10 @@
                             height="24"
                             viewBox="0 0 24 24"
                           >
-                            <g
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path
-                                d="M17.97 9.304A8 8 0 0 0 2 10c0 4.69 4.887 9.562 7.022 11.468m12.356-4.842a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
-                              ></path>
-                              <circle r="3" cx="10" cy="10"></circle>
-                            </g>
+                            <path
+                              d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
+                              fill="currentColor"
+                            ></path>
                           </svg>
                         </div>
                         <span class="footer-contact-text">
@@ -1992,10 +864,9 @@
                       <div class="footer-newsletter-input-group">
                         <input
                           type="email"
-                          id="footer-newsletter-email"
-                          name="footer-newsletter-email"
-                          required="true"
-                          aria-label="Email address"
+                          name="email"
+                          required
+                          autocomplete="email"
                           placeholder="Enter your email address"
                           data-form-field-id="footer-newsletter-email"
                           class="footer-newsletter-input"
@@ -2017,7 +888,7 @@
                       © 2025 Local Growth ATX. All rights reserved.
                     </p>
                     <div class="footer-legal-links">
-                      <a href="privacy-policy.html.html">
+                      <a href="privacy-policy.html">
                         <div class="footer-legal-link">
                           <span>Privacy Policy</span>
                         </div>
@@ -2025,7 +896,7 @@
                       <span aria-hidden="true" class="footer-legal-separator">
                         |
                       </span>
-                      <a href="terms-of-service.html.html">
+                      <a href="terms-of-service.html">
                         <div class="footer-legal-link">
                           <span>Terms of Service</span>
                         </div>
@@ -2046,12 +917,8 @@
                   viewBox="0 0 24 24"
                 >
                   <path
-                    d="m5 12l7-7l7 7m-7 7V5"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    d="m12 3.414l-9.293 9.293 1.414 1.414 7.879-7.879 7.879 7.879 1.414-1.414z"
+                    fill="currentColor"
                   ></path>
                 </svg>
               </button>
@@ -2060,11 +927,9 @@
               <div class="footer-container3">
                 <style>
                   @media (prefers-reduced-motion: reduce) {
-                  .footer-section *, .footer-section *::before, .footer-section *::after {
-                    animation-duration: 0.01ms !important;
-                    animation-iteration-count: 1 !important;
-                    transition-duration: 0.01ms !important;
-                  }
+                    .footer-scroll-top {
+                      transition: none;
+                    }
                   }
                 </style>
               </div>
@@ -2074,60 +939,18 @@
                 <script defer="" data-name="footer-scroll-to-top">
                   document.addEventListener('DOMContentLoaded', function() {
                     (function(){
-                      // Scroll to Top Button Functionality
-                      const scrollTopButton = document.getElementById("footer-scroll-top")
-
-                      // Show/hide scroll to top button based on scroll position
-                      function handleScrollTopVisibility() {
-                        const scrollPosition =
-                          window.pageYOffset || document.documentElement.scrollTop
-
-                        if (scrollPosition > 400) {
-                          scrollTopButton.classList.add("footer-scroll-top-visible")
-                        } else {
-                          scrollTopButton.classList.remove("footer-scroll-top-visible")
-                        }
-                      }
-
-                      // Scroll to top with smooth animation
-                      function scrollToTop() {
-                        window.scrollTo({
-                          top: 0,
-                          behavior: "smooth",
-                        })
-                      }
-
-                      // Event listeners
-                      window.addEventListener("scroll", handleScrollTopVisibility, {
-                        passive: true,
-                      })
-                      scrollTopButton.addEventListener("click", scrollToTop)
-
-                      // Initial check
-                      handleScrollTopVisibility()
-
-                      // Newsletter form handling
-                      const newsletterForm = document.querySelector(".footer-newsletter-form")
-
-                      if (newsletterForm) {
-                        newsletterForm.addEventListener("submit", function (e) {
-                          e.preventDefault()
-
-                          const emailInput = document.getElementById("footer-newsletter-email")
-                          const email = emailInput.value.trim()
-
-                          if (email) {
-                            // Here you would normally send the email to your backend
-                            // For now, we'll just show a success message
-                            alert(
-                              "Thank you for subscribing! Check your inbox for the latest Austin marketing tips."
-                            )
-                            emailInput.value = ""
-                          }
+                      const scrollTopButton = document.getElementById('footer-scroll-top')
+                      
+                      if (scrollTopButton) {
+                        scrollTopButton.addEventListener('click', function() {
+                          window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                          })
                         })
                       }
                     })()
-                  });
+                  })
                 </script>
               </div>
             </div>
