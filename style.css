@@ -962,6 +962,15 @@
 .navigation-link:hover .navigation-link-underline {
   width: 100%;
 }
+
+.navigation-link-active {
+  color: var(--color-primary);
+}
+
+.navigation-link-active .navigation-link-underline {
+  width: 100%;
+  background: var(--color-primary);
+}
  
 .navigation-link:focus-visible {
   outline: 2px solid var(--color-primary);
